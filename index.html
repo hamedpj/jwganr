@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Jurassic Romántico con Dinosaurios</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet" />
+<style>
+  /* Reset */
+  *, *::before, *::after {
+    margin: 0; padding: 0; box-sizing: border-box;
+  }
+  html, body {
+    height: 100%;
+    background:
+      radial-gradient(circle at center, #0c2615 40%, #021007 90%);
+    color: #a3d977;
+    font-family: 'Montserrat', sans-serif;
+    overflow-x: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+  }
+
+  /* Container for content */
+  main {
+    max-width: 720px;
+    background: rgba(12, 38, 21, 0.9);
+    border-radius: 24px;
+    box-shadow:
+      0 0 30px #4caf5090,
+      inset 0 0 40px #3ba228aa;
+    padding: 50px 40px 80px;
+    backdrop-filter: blur(12px);
+    position: relative;
+  }
+
+  h1 {
+    font-size: 3.8rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    text-shadow:
+      0 0 6px #7ed957,
+      0 0 12px #75c342,
+      0 0 16px #547732;
+    margin-bottom: 20px;
+  }
+
+  /* Heart icon next to text */
+  .heart {
+    display: inline-block;
+    position: relative;
+    width: 48px;
+    height: 48px;
+    margin-left: 16px;
+    vertical-align: middle;
+    background: linear-gradient(135deg, #f44336 0%, #d32f2f 100%);
+    clip-path: polygon(
+      50% 0%, 61% 12%, 75% 10%, 85% 20%, 90% 34%, 88% 50%, 67% 77%,
+      50% 100%, 33% 77%, 12% 50%, 10% 34%, 15% 20%, 25% 10%, 39% 12%
+    );
+    box-shadow:
+      0 0 16px #f4433666,
+      0 0 12px #d32f2f88;
+    animation: pulse 2s infinite ease-in-out;
+  }
+
+  @keyframes pulse {
+    0%, 100% {
+      transform: scale(1);
+      box-shadow:
+        0 0 16px #f4433666,
+        0 0 12px #d32f2f88;
+    }
+    50% {
+      transform: scale(1.15);
+      box-shadow:
+        0 0 24px #f44338bb,
+        0 0 20px #d32f2fcc;
+    }
+  }
+
+  /* Subtitle style for extra romance */
+  p.subtitle {
+    color: #7fffbf;
+    font-weight: 600;
+    font-size: 1.3rem;
+    margin-top: 20px;
+    margin-bottom: 48px;
+    letter-spacing: 0.07em;
+    text-shadow: 0 0 6px #4aaf71cc;
+  }
+
+  /* Dinosaur container */
+  .dinosaurs {
+    display: flex;
+    justify-content: center;
+    gap: 28px;
+    flex-wrap: wrap;
+  }
+
+  svg.dino {
+    width: 72px;
+    height: 72px;
+    fill: #7cdc74;
+    filter: drop-shadow(0 0 4px #3c603f88);
+    cursor: pointer;
+    transition: transform 0.3s ease, fill 0.3s ease;
+    user-select: none;
+  }
+  svg.dino:hover {
+    transform: scale(1.3) rotate(10deg);
+    fill: #44b349;
+    filter: drop-shadow(0 0 8px #34a134cc);
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    body {
+      padding: 10px;
+    }
+    main {
+      padding: 30px 20px 50px;
+      max-width: 95%;
+    }
+    h1 {
+      font-size: 2.2rem;
+      letter-spacing: 0.08em;
+      line-height: 1.2;
+    }
+    .heart {
+      width: 32px;
+      height: 32px;
+      margin-left: 8px;
+    }
+    p.subtitle {
+      font-size: 1.1rem;
+      margin-bottom: 35px;
+    }
+    .dinosaurs {
+      gap: 18px;
+    }
+    svg.dino {
+      width: 48px;
+      height: 48px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    main {
+      padding: 25px 15px 40px;
+      border-radius: 16px;
+    }
+    h1 {
+      font-size: 1.8rem;
+      letter-spacing: 0.05em;
+      margin-bottom: 15px;
+    }
+    .heart {
+      width: 28px;
+      height: 28px;
+      margin-left: 6px;
+    }
+    p.subtitle {
+      font-size: 1rem;
+      margin-bottom: 30px;
+    }
+    .dinosaurs {
+      gap: 15px;
+    }
+    svg.dino {
+      width: 42px;
+      height: 42px;
+    }
+    svg.dino:hover {
+      transform: scale(1.2) rotate(8deg);
+    }
+  }
+
+  @media (max-width: 360px) {
+    h1 {
+      font-size: 1.6rem;
+    }
+    .heart {
+      width: 24px;
+      height: 24px;
+      margin-left: 5px;
+    }
+    p.subtitle {
+      font-size: 0.9rem;
+    }
+    svg.dino {
+      width: 38px;
+      height: 38px;
+    }
+    .dinosaurs {
+      gap: 12px;
+    }
+  }
+</style>
+</head>
+<body>
+<main role="main" aria-label="Mensaje romántico estilo Jurassic World con dinosaurios lindos">
+  <h1>
+    Porque sé que te gusta mucho
+    <span class="heart" aria-hidden="true"></span>
+  </h1>
+  <p class="subtitle">Un amor tan jurásico como eterno, seguiré enamorándote día a día, te quiero mucho</p>
+  <section class="dinosaurs" aria-label="Dinosaurios lindos decorativos">
+    <!-- Dinosaur 1: T-Rex -->
+    <svg class="dino" aria-hidden="true" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" role="img" >
+      <path d="M16 18c-1 1-3 2-4 6-1 2 0 5 2 8s11 11 14 12c0 0 2-1 3-2s6-4 8-7c0 0-3-3-6-4l-3-3-7-10z" />
+      <ellipse cx="33" cy="36" rx="4" ry="6" />
+      <path d="M38 43l4-3 9 8-2 2s-2-5-7-7z" />
+      <circle cx="18" cy="20" r="2" fill="#397d2a" />
+    </svg>
+
+    <!-- Dinosaur 2: Stegosaurus -->
+    <svg class="dino" aria-hidden="true" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" role="img" >
+      <path d="M8 35c.5-2 5-7 8-8s16-3 20-3c2 0 4 1 5 3 0 1-3 6-3 8s-3 5-4 5-6 2-9 3-15 2-17-5z" />
+      <path d="M15 20l6-6 4 5-4 6z" />
+      <circle cx="18" cy="46" r="3" />
+      <circle cx="30" cy="44" r="3" />
+    </svg>
+
+    <!-- Dinosaur 3: Pterodactyl -->
+    <svg class="dino" aria-hidden="true" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" role="img" >
+      <path d="M45 20c-2 1-6 6-6 6l-8 6-10-8 5-3 9-6s8-2 13 5z" />
+      <circle cx="38" cy="23" r="3" />
+      <path d="M25 34l-5 6-2-8 3-2z" />
+    </svg>
+
+    <!-- Dinosaur 4: Triceratops -->
+    <svg class="dino" aria-hidden="true" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" role="img" >
+      <ellipse cx="32" cy="35" rx="12" ry="8" />
+      <path d="M20 30c-2-1-4-2-6-1s-3 3-2 5 3 3 5 2 4-3 3-6z" />
+      <path d="M44 30c2-1 4-2 6-1s3 3 2 5-3 3-5 2-4-3-3-6z" />
+      <path d="M32 25l-3-4 2-3 2 2 2-2 2 3z" />
+      <circle cx="28" cy="32" r="2" fill="#397d2a" />
+      <circle cx="36" cy="32" r="2" fill="#397d2a" />
+      <circle cx="26" cy="42" r="3" />
+      <circle cx="32" cy="44" r="3" />
+      <circle cx="38" cy="42" r="3" />
+    </svg>
+
+    <!-- Dinosaur 5: Brontosaurus -->
+    <svg class="dino" aria-hidden="true" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" role="img" >
+      <ellipse cx="35" cy="38" rx="15" ry="6" />
+      <path d="M20 35c-8 0-12-3-12-8s4-8 8-6c2 1 3 3 4 6s2 8 0 8z" />
+      <circle cx="18" cy="28" r="2" fill="#397d2a" />
+      <path d="M45 32c4-2 8 2 10 6s0 8-4 8-6-2-6-6z" />
+      <circle cx="30" cy="44" r="3" />
+      <circle cx="40" cy="44" r="3" />
+    </svg>
+
+    <!-- Dinosaur 6: Raptor -->
+    <svg class="dino" aria-hidden="true" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" role="img" >
+      <ellipse cx="28" cy="32" rx="8" ry="5" />
+      <path d="M20 28c-3-2-5-5-4-8s4-4 6-2 3 5 2 8z" />
+      <circle cx="22" cy="25" r="2" fill="#397d2a" />
+      <path d="M35 35l8 6-2 4-6-4z" />
+      <circle cx="24" cy="40" r="2.5" />
+      <circle cx="32" cy="42" r="2.5" />
+      <path d="M36 30l6-8 3 2-4 8z" />
+    </svg>
+
+    <!-- Dinosaur 7: Baby T-Rex -->
+    <svg class="dino" aria-hidden="true" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" role="img" >
+      <ellipse cx="32" cy="36" rx="6" ry="8" />
+      <path d="M26 28c-2-1-4-3-3-6s3-4 5-2 2 4 1 6z" />
+      <circle cx="28" cy="26" r="2" fill="#397d2a" />
+      <path d="M38 32l4-2 2 4-3 2z" />
+      <path d="M39 34l3-1 1 3-2 1z" />
+      <circle cx="28" cy="44" r="3" />
+      <circle cx="36" cy="44" r="3" />
+    </svg>
+
+    <!-- Dinosaur 8: Ankylosaurus -->
+    <svg class="dino" aria-hidden="true" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" role="img" >
+      <ellipse cx="32" cy="38" rx="14" ry="7" />
+      <circle cx="22" cy="34" r="2" />
+      <circle cx="28" cy="32" r="2" />
+      <circle cx="36" cy="32" r="2" />
+      <circle cx="42" cy="34" r="2" />
+      <circle cx="26" cy="30" r="1.5" fill="#397d2a" />
+      <path d="M45 38l6 2-1 4-5-2z" />
+      <circle cx="26" cy="45" r="3" />
+      <circle cx="32" cy="46" r="3" />
+      <circle cx="38" cy="45" r="3" />
+    </svg>
+
+  </section>
+</main>
+</body>
+</html>
